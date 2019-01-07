@@ -3,8 +3,8 @@ library(lubridate)
 
 Mid_2018 <- read.csv("P:/Reilly/Rstuff/2018_dom_wq/export-xyle510.Dominion Power.MidPoint.Campbell PakBus Logger.csv", header=FALSE)
 South_2018 <- read.csv("P:/Reilly/Rstuff/2018_dom_wq/export-xyle510.Dominion Power.SouthPoint.Campbell PakBus Logger.csv", header=FALSE)
-weather_2018 <- read.csv("P:/Reilly/Rstuff/2018_dom_wq/export-xyle510.Dominion Power.NorthPoint.Campbell PakBus Logger other.csv", header=FALSE)
-North_2018 <- read.csv("P:/Reilly/Rstuff/2018_dom_wq/export-xyle510.Dominion Power.NorthPoint.Campbell PakBus Logger.csv", header=FALSE)
+North_2018 <- read.csv("P:/Reilly/Rstuff/2018_dom_wq/export-xyle510.Dominion Power.NorthPoint.Campbell PakBus Logger other.csv", header=FALSE)
+weather_2018 <- read.csv("P:/Reilly/Rstuff/2018_dom_wq/export-xyle510.Dominion Power.NorthPoint.Campbell PakBus Logger.csv", header=FALSE)
 
 Mid_2018<-Mid_2018 %>% 
   select(-c(V2, V9))
@@ -19,3 +19,8 @@ colnames(South_2018)<-headers
 South_2018<-South_2018[-c(1:3),]
 South_2018$station<-"South"
 
+North_2018<-North_2018 %>% 
+  select(-c(V2, V9))
+colnames(North_2018)<-headers
+North_2018<-North_2018[-c(1:3),]
+North_2018$station<-"North"
