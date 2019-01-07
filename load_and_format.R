@@ -13,3 +13,9 @@ colnames(Mid_2018)<-headers
 Mid_2018<-Mid_2018[-c(1:3),]
 Mid_2018$station<-"Mid"
 
+South_2018<-South_2018 %>% 
+  select(-c(V2, V9))
+colnames(South_2018)<-headers
+South_2018<-South_2018[-c(1:3),]
+South_2018$station<-"South"
+
